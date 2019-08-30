@@ -1,0 +1,13 @@
+<h1>Edit Book</h1>
+
+
+<%= form_for @book_edit, url: { action: "update" } do |book_form| %>
+  Id: <%= book_form.text_field :id %> <br>
+  Title: <%= book_form.text_field :title %> <br>
+  Author name : <%= book_form.text_field :author_name %> <br>
+  Category : <%= book_form.text_field :category %> <br>
+  Language : <%= book_form.text_field :language %> <br>
+  <%= submit_tag 'Edit' %>
+ 
+
+<% end %>

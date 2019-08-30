@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+table{
+  text-align: center;
+  margin-left: 30%
+}
+
+h1{
+  text-align: center
+}
+
+td,th{
+  padding: 10px
+}
+
+#edit,#view,#delete{
+  -webkit-text-fill-color: black;
+  padding: 10px;
+  text-decoration: none
+}
+
+#edit{
+  background-color: blue
+}
+
+#delete{
+  background-color: red
+}
+
+#view{
+  background-color:yellowgreen
+}
+

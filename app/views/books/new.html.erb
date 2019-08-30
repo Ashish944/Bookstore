@@ -1,0 +1,17 @@
+<h1> Create A Book</h1>
+<div>
+  <form>
+    
+  </form>
+  <%= form_with(url: "/books", method: "post") do %>
+  <%= label_tag(:title, " Title : ") %>
+  <%= text_field_tag(:title) %> <br>
+  <%= label_tag(:category, " Category : ") %>
+  <%= text_field_tag(:category) %> <br>
+  <%= label_tag(:author_name, " Author Name : ") %>
+  <%= text_field_tag(:author_name) %> <br>
+  <%= label_tag(:language, " Language : ") %>
+  <%= text_field_tag(:language) %><br>
+  <%= submit_tag("Create") %>
+<% end %>
+</div>

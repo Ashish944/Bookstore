@@ -1,0 +1,36 @@
+<h1> Books Store Application </h1>
+<div>
+  <%= button_to "New Post", { :action => "new" }, :method => :get %>
+</div>
+<hr>
+<div>
+ 
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+          <th> Book Title</th>
+          <th> Actions</th>
+          <th> Editions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td>&nbsp;</td>
+          <td><p> <%=book.title%></p></td>
+          <td><p>
+          <%= link_to "View", book_path(book), :id => 'view', :method => :get %>
+          <%= link_to "Edit", edit_book_path(book),:id => 'edit', :method => :get %>  
+          <%= link_to "Delete", book_path(book),:id => 'delete', :method => :delete %>
+          </p> </td>
+          <td>
+            <%book.editions.each do |edition| %>
+              <p><%=edition.version%>  <%=edition.published_date%></p>
+            <%end%>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>

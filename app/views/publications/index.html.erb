@@ -1,0 +1,7 @@
+<h1>Publication List</h1>
+<div>
+  <% @publications.each do |publication| %>
+    <p> <%=publication.name%></p> <br>
+    <p> <%=publication.email%></p> <br>
+  <%end%>
+</div>
