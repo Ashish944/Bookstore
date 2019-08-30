@@ -1,17 +1,36 @@
-<h1> Create A Book</h1>
+<h1> Create Book</h1>
+  <br>
+  <br>
 <div>
-  <form>
-    
-  </form>
   <%= form_with(url: "/books", method: "post") do %>
-  <%= label_tag(:title, " Title : ") %>
-  <%= text_field_tag(:title) %> <br>
-  <%= label_tag(:category, " Category : ") %>
-  <%= text_field_tag(:category) %> <br>
-  <%= label_tag(:author_name, " Author Name : ") %>
-  <%= text_field_tag(:author_name) %> <br>
-  <%= label_tag(:language, " Language : ") %>
-  <%= text_field_tag(:language) %><br>
-  <%= submit_tag("Create") %>
-<% end %>
+  <table>
+   <tbody>    
+      <tr>
+       <td> <%= label_tag(:title, " Title : ") %></td>
+       <td>  <%= text_field_tag(:title) %> </td>
+      </tr>
+   
+      <tr>
+        <td>  <%= label_tag(:category, " Category : ") %></td>
+        <td>   <%= text_field_tag(:category) %> </td>
+       </tr>
+
+       <tr>
+        <td> <%= label_tag(:author_name, " Author Name : ") %></td>
+        <td> <%= text_field_tag(:author_name) %> </td>
+       </tr>
+      
+       <tr>
+        <td>  <%= label_tag(:language, " Language : ") %></td>
+        <td>  <%= text_field_tag(:language) %></td>
+       </tr>
+       
+       <tr>
+         <td></td>
+         <td><%= submit_tag("Create") %></td> 
+       </tr>
+        <% end %>
+      </tbody>
+  </table>
+
 </div>

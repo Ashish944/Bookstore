@@ -1,13 +1,39 @@
 <h1>Edit Book</h1>
 
-
-<%= form_for @book_edit, url: { action: "update" } do |book_form| %>
-  Id: <%= book_form.text_field :id %> <br>
-  Title: <%= book_form.text_field :title %> <br>
-  Author name : <%= book_form.text_field :author_name %> <br>
-  Category : <%= book_form.text_field :category %> <br>
-  Language : <%= book_form.text_field :language %> <br>
-  <%= submit_tag 'Edit' %>
- 
-
-<% end %>
+<div>
+    <%= form_for @book_edit, url: { action: "update" } do |book_form| %>
+    <table>
+     <tbody>
+        <tr>
+            <td> <%= label_tag(:title, " Id : ") %></td>
+            <td>  <%= book_form.text_field :id %> </td>
+           </tr>
+            
+        <tr>
+         <td> <%= label_tag(:title, " Title : ") %></td>
+         <td>  <%= book_form.text_field :title %></td>
+        </tr>
+     
+        <tr>
+          <td>  <%= label_tag(:category, " Category : ") %></td>
+          <td>   <%= book_form.text_field :category %></td>
+         </tr>
+  
+         <tr>
+          <td> <%= label_tag(:author_name, " Author Name : ") %></td>
+          <td> <%= book_form.text_field :author_name %> </td>
+         </tr>
+        
+         <tr>
+          <td>  <%= label_tag(:language, " Language : ") %></td>
+          <td>  <%= book_form.text_field :language %> </td>
+         </tr>
+         
+         <tr>
+           <td></td>
+           <td> <%= submit_tag 'Edit' %></td> 
+         </tr>
+          <% end %>
+        </tbody>
+    </table>
+</div>
