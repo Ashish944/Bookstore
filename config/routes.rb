@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   #get 'books/:id' => 'books#show'
   resources :books
   resources :publications
+  resources :editions
 end

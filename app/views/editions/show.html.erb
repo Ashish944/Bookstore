@@ -1,0 +1,24 @@
+<h1> Details of Book </h1>
+<h3>Id : <%= @book.id%></h3>
+<h3>Title : <%= @book.title %></h3>
+<h3>Author : <%= @book.author_name%></h3>
+<h3>Category : <%= @book.category%></h3>
+<h3>Language : <%= @book.language%></h3>
+
+<h1> Book Editions</h1>
+<hr>
+<%@book.editions.each do |edition| %>
+<h3> Version : <%=edition.version%></h3>  
+<h3> Published Date : <%=edition.published_date%></h3>
+<h3> Cover Type : <%=edition.cover_type%></h3>
+<h3> No of Pages : <%=edition.no_of_pages%></h3>
+<h3> Price : <%=edition.price%></h3>
+<hr>
+<%end%>
+
+<h1> Details of Publication </h1>
+<h3>Id : <%= @publication.id%></h3>
+<h3>Title : <%= @publication.name %></h3>
+<h3>Author : <%= @publication.email%></h3>
+<h3>Category : <%= @publication.mobile_number%></h3>
+

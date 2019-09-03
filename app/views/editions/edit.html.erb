@@ -1,0 +1,60 @@
+<h1>Edit Book</h1>
+
+<div>
+    <%= form_for @edition_edit, url: { action: "update" } do |edition_form| %>
+    <table>
+     <tbody>
+        <tr>
+            <td> <%= label_tag(:title, " Id : ") %></td>
+            <td>  <%= edition_form.text_field :id %> </td>
+           </tr>
+            
+        <tr>
+         <td> <%= label_tag(:version, " Version : ") %></td>
+         <td>  <%= edition_form.text_field :version %></td>
+        </tr>
+     
+        <tr>
+          <td>  <%= label_tag(:published_date, " Published Date : ") %></td>
+          <td>   <%= edition_form.text_field :published_date %></td>
+         </tr>
+  
+         <tr>
+          <td> <%= label_tag(:cover_type, " Cover Type: ") %></td>
+          <td> <%= edition_form.text_field :cover_type %> </td>
+         </tr>
+        
+         <tr>
+          <td> <%= label_tag(:no_of_pages, " No of Pages : ") %></td>
+          <td>  <%= edition_form.text_field :no_of_pages %> </td>
+         </tr>
+         
+         <tr>
+            <td>  <%= label_tag(:price, " Price : ") %></td>
+            <td>   <%= edition_form.text_field :price %> </td>
+         </tr>
+  
+         <tr>
+            <td>  <%= label_tag(:count, " Count : ") %></td>
+            <td>   <%= edition_form.text_field :count %> </td>
+         </tr>
+  
+         <tr>
+            <td>  <%= label_tag(:publication_id, " Publication : ") %></td>
+            <td>  <%= select("name", 
+                            "publication_id", 
+                            Publication.all.collect { |p| [ p.name, p.id ] }
+
+                            ) 
+                  %>
+            </td>
+         </tr>
+         <tr>
+           <td></td>
+           <td> <%= submit_tag 'Edit' %></td> 
+         </tr>
+          <% end %>
+    
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,56 @@
+<h1> Create Edition</h1>
+  <br>
+  <br>
+<div>
+  <%= form_with(url: "/editions", method: "post") do %>
+  <table>
+   <tbody>    
+      <tr>
+       <td> <%= label_tag(:version, " Version : ") %></td>
+       <td>  <%= text_field_tag(:version) %> </td>
+      </tr>
+   
+      <tr>
+        <td>  <%= label_tag(:published_date, " Published Date : ") %></td>
+        <td>   <%= text_field_tag(:published_date) %> </td>
+       </tr>
+
+       <tr>
+        <td> <%= label_tag(:cover_type, " Cover Type: ") %></td>
+        <td> <%= text_field_tag(:cover_type) %> </td>
+       </tr>
+      
+       <tr>
+        <td>  <%= label_tag(:no_of_pages, " No of Pages : ") %></td>
+        <td>  <%= text_field_tag(:no_of_pages) %></td>
+       </tr>
+       
+       <tr>
+          <td>  <%= label_tag(:price, " Price : ") %></td>
+          <td>  <%= text_field_tag(:price) %></td>
+       </tr>
+
+       <tr>
+          <td>  <%= label_tag(:count, " Count : ") %></td>
+          <td>  <%= text_field_tag(:count) %></td>
+       </tr>
+
+       <tr>
+          <td>  <%= label_tag(:publication_id, " Publication : ") %></td>
+          <td>  <%= select("name", 
+                          "publication_id", 
+                          Publication.all.collect { |p| [ p.name, p.id ] },
+                          { include_blank: true }) 
+                %>
+          </td>
+       </tr>
+
+       <tr>
+         <td></td>
+         <td><%= submit_tag("Create") %></td> 
+       </tr>
+        <% end %>
+      </tbody>
+  </table>
+
+</div>
