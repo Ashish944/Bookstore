@@ -1,5 +1,9 @@
 class EditionsController < ApplicationController
 
+  def index
+    render json: Edition.all
+  end
+
   def  new
     
   end
@@ -16,6 +20,7 @@ class EditionsController < ApplicationController
     @book = Book.find_by_id(book_id)
     @edition_id = Edition.find_by_id(book_id)
     @publication = @edition_id.publication
+    render json: @edition_id
   end
   
   def update

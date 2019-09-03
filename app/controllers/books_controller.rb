@@ -4,10 +4,11 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all.includes(:editions)
-  
+    render json: @books
   end
 
   def show
+   # render json: @book
   end
 
   def new
@@ -21,9 +22,13 @@ class BooksController < ApplicationController
 
   def update
   
-    @book.update_attributes(params
+    if @book.update_attributes(params
                           .require('book')
                           .permit(:title, :author_name, :category, :language))
+      render json: @article
+    else
+      render json: @article.errors, status: :unprocessable_entity                      
+    end                        
   end
 
   def create
@@ -34,11 +39,19 @@ class BooksController < ApplicationController
     @book.language = params["language"]
     @book.category = params["category"]
     puts "\n\n #{@book} \n \n"
-    @book.save
+   
+    if @book.save
+      render json: @book, status: :created, location: @book
+    else
+      render json: @book.errors, status: :unprocessable_entity
+    end
+    
   end
 
   def destroy
+    @book.editions.delete
     @book.delete
+    
     redirect_to '/books'
   end
 
