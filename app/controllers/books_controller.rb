@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all.includes(:editions)
-    render json: @books
+   # render json: @books
   end
 
   def show
