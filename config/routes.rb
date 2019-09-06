@@ -3,7 +3,14 @@ Rails.application.routes.draw do
 
  # get 'books' => 'books#index'
   #get 'books/:id' => 'books#show'
-  resources :books
+  
   resources :publications
-  resources :editions
+  
+
+  resources :books do
+    resources :editions
+  end
+  
+  
+  
 end
