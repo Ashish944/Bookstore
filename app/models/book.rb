@@ -4,9 +4,5 @@ class Book < ApplicationRecord
 
   has_many :editions
   has_many :publications, :through => :editions
- # before_save :initialize_count
-
- # def initialize_count
-  #  self.count = 0 unless self.count
- # end
+  
 end
