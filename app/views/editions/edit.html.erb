@@ -42,12 +42,11 @@
          <tr>
             <td>  <%= label_tag(:publication_id, " Publication : ") %></td>
             <td>  <%= edition_form.collection_select :publication_id, 
-               Publication.all, :id, :name, {:prompt => @select_value, :selected => @edition_edit.publication_id.to_i}
-        
+                                             Publication.all, :id, :name,
+                                              {:prompt => @select_value, 
+                                             :selected => @edition_edit.publication_id.to_i}
                   %>
-                 <h1> <%= edition_form.text_field :publication_id %></h1> 
-
-                              </td>
+            </td>
          </tr>
          <tr>
            <td></td>

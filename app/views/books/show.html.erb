@@ -13,6 +13,7 @@
 <h3> Cover Type : <%=edition.cover_type%></h3>
 <h3> No of Pages : <%=edition.no_of_pages%></h3>
 <h3> Price : <%=edition.price%></h3>
+<%= link_to "View Edition", book_edition_path(@book, edition), :id => 'view', :method => :get %>
 <%= link_to "Edit Edition", edit_book_edition_path(@book, edition), :id => 'edit', :method => :get %>
 <%= link_to "Delete", book_edition_path(@book, edition),:id => 'delete', :method => :delete %>
 <hr>
