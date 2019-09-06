@@ -7,7 +7,7 @@
         <tr>
             <td> <%= label_tag(:title, " Id : ") %></td>
             <td>  <%= edition_form.text_field :id %> </td>
-           </tr>
+         </tr>
             
         <tr>
          <td> <%= label_tag(:version, " Version : ") %></td>
@@ -41,13 +41,13 @@
   
          <tr>
             <td>  <%= label_tag(:publication_id, " Publication : ") %></td>
-            <td>  <%= select("name", 
-                            "publication_id", 
-                            Publication.all.collect { |p| [ p.name, p.id ] }
-
-                            ) 
+            <td>  <%= edition_form.collection_select :publication_id, 
+               Publication.all, :id, :name, {:prompt => @select_value, :selected => @edition_edit.publication_id.to_i}
+        
                   %>
-            </td>
+                 <h1> <%= edition_form.text_field :publication_id %></h1> 
+
+                              </td>
          </tr>
          <tr>
            <td></td>

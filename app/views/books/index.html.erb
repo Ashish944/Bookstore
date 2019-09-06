@@ -23,7 +23,8 @@
           <%= link_to "View", book_path(book), :id => 'view', :method => :get %>
           <%= link_to "Edit", edit_book_path(book),:id => 'edit', :method => :get %>  
           <%= link_to "Delete", book_path(book),:id => 'delete', :method => :delete %>
-          </p> </td>
+          <%= link_to "Add Edition", new_book_edition_path(book),:id => "new", :method => :get %>
+          </p> </td>  
           <td>
             <%book.editions.each do |edition| %>
               <p><%=edition.version%>  <%=edition.published_date%></p>
