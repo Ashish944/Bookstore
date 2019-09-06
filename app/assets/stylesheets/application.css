@@ -26,10 +26,15 @@ td,th{
   padding: 10px
 }
 
-#edit,#view,#delete{
+#edit,#view,#delete,#new{
   -webkit-text-fill-color: black;
   padding: 10px;
   text-decoration: none
+}
+
+#new{
+  color: black;
+  background-color: yellow
 }
 
 #edit{
@@ -44,3 +49,7 @@ td,th{
   background-color:yellowgreen
 }
 
+.fieldset_width{
+  width: 800px;
+  margin-left: 20%
+}
