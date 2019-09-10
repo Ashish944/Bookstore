@@ -1,6 +1,7 @@
 <h1> Books Store Application </h1>
 <div>
-  <%= button_to "New Post", { :action => "new" }, :method => :get %>
+  <%= button_to "Add Book", { :action => "new" }, :method => :get %>
+  <%= button_to "Add Publication", new_publication_path, :method => :get %>
 </div>
 <hr>
 <div>
