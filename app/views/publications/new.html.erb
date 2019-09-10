@@ -1,0 +1,31 @@
+<h1> Create Publication</h1>
+  <br>
+  <br>
+<div>
+  <%= form_for @publication_data, url:{ action: "create" } do |publication_form| %>
+  <table>
+   <tbody>    
+      <tr>
+       <td> <%= label_tag(:name, " Name : ") %></td>
+       <td>  <%= publication_form.text_field(:name) %> </td>
+      </tr>
+   
+      <tr>
+        <td>  <%= label_tag(:email, " Email : ") %></td>
+        <td>   <%= publication_form.text_field(:email) %> </td>
+       </tr>
+
+       <tr>
+        <td> <%= label_tag(:mobile_number, " Mobile No : ") %></td>
+        <td> <%= publication_form.text_field(:mobile_number) %> </td>
+       </tr>
+      
+       <tr>
+         <td></td>
+         <td><%= submit_tag("Create") %></td> 
+       </tr>
+        <% end %>
+      </tbody>
+  </table>
+
+</div>
