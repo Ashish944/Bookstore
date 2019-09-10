@@ -3,7 +3,6 @@ class Publication < ApplicationRecord
   has_many :books, :through => :editions
   has_many :feedback_tables , as: :sender
 
-  attr_accessor :mobile_number
   validates :name, :email, :mobile_number, presence: true
   validates :mobile_number, length: {is: 10}
 
