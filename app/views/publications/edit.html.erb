@@ -1,0 +1,36 @@
+<h1>Edit Book</h1>
+
+<div>
+    <%= form_for @publication_edit, url: { action: "update" } do |publication_form| %>
+    <table>
+     <tbody>
+        <tr>
+            <td> <%= label_tag(:id, " Id : ") %></td>
+            <td>  <%= publication_form.text_field :id %> </td>
+         </tr>
+            
+        <tr>
+         <td> <%= label_tag(:name, " Name : ") %></td>
+         <td>  <%= publication_form.text_field :name %></td>
+        </tr>
+     
+        <tr>
+          <td>  <%= label_tag(:email, " Email : ") %></td>
+          <td>   <%= publication_form.text_field :email %></td>
+         </tr>
+  
+         <tr>
+          <td> <%= label_tag(:mobile_number, " Mobile No: ") %></td>
+          <td> <%= publication_form.text_field :mobile_number %> </td>
+         </tr>
+        
+       
+         <tr>
+           <td></td>
+           <td> <%= submit_tag 'Edit' %></td> 
+         </tr>
+          <% end %>
+    
+        </tbody>
+    </table>
+</div>
