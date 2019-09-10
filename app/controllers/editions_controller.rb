@@ -15,11 +15,10 @@ class EditionsController < ApplicationController
   
 
 
-  def show
-    book_id = params[:id]
-    @book = Book.find_by_id(book_id)
-    @edition_id = Edition.find_by_id(book_id)
-    @publication = @edition_id.publication
+  def show 
+    @book = Book.find_by_id(params[:book_id])
+    @edition_id = Edition.find_by_id(params[:id])
+    @publication = @edition_id.publication  
    # render json: @edition_id
   end
   
@@ -39,6 +38,7 @@ class EditionsController < ApplicationController
   def create
     puts "In create method Edition Controller"
     @book = Book.find_by_id(params[:book_id])
+    
     @edition = @book.editions.create(params
                                       .require('edition')
                                       .permit(:version, :published_date, :cover_type,
@@ -46,7 +46,14 @@ class EditionsController < ApplicationController
                                        :publication_id)
 
                                       )
-    p @edition.errors
+
+    if @edition
+      render json: @book, status: :created, location: @book
+    else
+      render json: @book.errors, status: :unprocessable_entity
+    end
+    
+    #p @edition.errors
   end
 
   def destroy

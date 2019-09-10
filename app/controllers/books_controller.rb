@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all.includes(:editions)
-   # render json: @books
+    #render json: @books
   end
 
   def show
@@ -25,9 +25,9 @@ class BooksController < ApplicationController
     if @book.update_attributes(params
                           .require('book')
                           .permit(:title, :author_name, :category, :language))
-      render json: @article
+      render json: @book
     else
-      render json: @article.errors, status: :unprocessable_entity                      
+      render json: @book.errors, status: :unprocessable_entity                      
     end                        
   end
 
