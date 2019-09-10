@@ -31,7 +31,7 @@ class EditionsController < ApplicationController
                                 :publication_id)
                               )
     else
-   #   render json: @article.errors, status: :unprocessable_entity                      
+      render json: @edition_edit.errors, status: :unprocessable_entity                      
     end              
   end
 
