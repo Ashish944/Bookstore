@@ -13,6 +13,9 @@
 <h3> Cover Type : <%=edition.cover_type%></h3>
 <h3> No of Pages : <%=edition.no_of_pages%></h3>
 <h3> Price : <%=edition.price%></h3>
+<%= link_to "View Edition", book_edition_path(@book, edition), :id => 'view', :method => :get %>
+<%= link_to "Edit Edition", edit_book_edition_path(@book, edition), :id => 'edit', :method => :get %>
+<%= link_to "Delete", book_edition_path(@book, edition),:id => 'delete', :method => :delete %>
 <hr>
 <%end%>
 
@@ -20,5 +23,8 @@
 <h3>Id : <%= @publication.id%></h3>
 <h3>Title : <%= @publication.name %></h3>
 <h3>Author : <%= @publication.email%></h3>
-<h3>Category : <%= @publication.mobile_number%></h3>
+<h3>Mobile No : <%= @publication.mobile_number%></h3>
+<%= link_to "Edit", edit_publication_path(@publication),:id => "edit", :method => :get %>
+<%= link_to "Delete", publication_path(@publication),:id => 'delete', :method => :delete %>
+<hr>
 
